@@ -19,7 +19,14 @@ def page2():
             dbc.Col(html.Div("An automatically sized column"), width="auto")
         ),
         dbc.Row([
-            dbc.Col(html.Div("One of three columns"), width=3),
+            dbc.Col(    
+                dcc.Dropdown(
+                    options=[
+                        {'label': 'New York City', 'value': 'NYC'},
+                        {'label': 'Montréal', 'value': 'MTL'},
+                        {'label': 'San Francisco', 'value': 'SF'}
+                ],value='MTL'
+            ), width=3),
             dbc.Col(html.Div("One of three columns")),
             dbc.Col(html.Div("One of three columns"), width=3),
         ])
