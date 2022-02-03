@@ -74,7 +74,7 @@ content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 
 import lib.view.page1
-
+page1 = page1()
 
 
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
