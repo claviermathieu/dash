@@ -13,12 +13,6 @@ def page1():
 
 
 
-
-
-
-
-
-
     page1 = html.Div([
         html.H1("Un titre"), 
         html.P("Une explication sur ce que je fais")

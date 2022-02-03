@@ -65,16 +65,16 @@ sidebar = html.Div(
     style=SIDEBAR_STYLE,
 )
 
-from lib.view.page1 import page1
-
-page1 = page1()
 
 
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 
-import lib.view.page1
+from lib.view.page1 import page1
+from lib.view.page2 import page2
 page1 = page1()
+page2 = page2()
+
 
 
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
@@ -88,7 +88,7 @@ def render_page_content(pathname):
     elif pathname == "/page-1":
         return page1
     elif pathname == "/page-2":
-        return html.P("Oh cool, this is page 2!")
+        return page2
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
         [
